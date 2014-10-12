@@ -6,9 +6,8 @@ import java.util.List;
 public class QuickSorter {
 
 	public List<Integer> sort(final List<Integer> unsortedIntegers) {
-		final List<Integer> sortedIntegers = new ArrayList<Integer>();
 		if (null == unsortedIntegers || unsortedIntegers.isEmpty()) {
-			return sortedIntegers;
+			return new ArrayList<Integer>();
 		}
 		
 		if (unsortedIntegers.size()==1) {
@@ -33,6 +32,7 @@ public class QuickSorter {
 			}
 		}
 		
+		final List<Integer> sortedIntegers = new ArrayList<Integer>();
 		sortedIntegers.addAll(sort(smallerIntegers));
 		sortedIntegers.add(pivotValue);
 		sortedIntegers.addAll(sort(biggerIntegers));
