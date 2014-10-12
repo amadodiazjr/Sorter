@@ -28,13 +28,13 @@ public class MergeSorterTest {
 	@Test
 	public void canSort() {
 		// ~given
-		final Integer[] unsortedIntegers = {6, 5, 3, 1, 7, 2, 4};
+		final Integer[] unsortedIntegers = {6, 5, 3, 1, 8, 7, 2, 4};
 		final MergeSorter sorter = new MergeSorter();
 
 		// ~when
 		final List<Integer> sortedIntegers = sorter.sort(Arrays.asList(unsortedIntegers));
 		
-		// ~then {1, 2, 3, 4, 5, 5, 7};
+		// ~then {1, 2, 3, 4, 5, 5, 7, 8};
 		assertThat(sortedIntegers.get(0), is(1));
 		assertThat(sortedIntegers.get(1), is(2));
 		assertThat(sortedIntegers.get(2), is(3));
@@ -42,6 +42,7 @@ public class MergeSorterTest {
 		assertThat(sortedIntegers.get(4), is(5));
 		assertThat(sortedIntegers.get(5), is(6));
 		assertThat(sortedIntegers.get(6), is(7));
+		assertThat(sortedIntegers.get(7), is(8));
 	}
 
 }
